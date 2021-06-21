@@ -12,9 +12,9 @@ from userge import userge, Message
     'usage': "{tr}plet [text | reply]",
     'examples': "{tr}plet @theUserge"}, allow_via_bot=False)
 async def sticklet(message: Message):
-    R = randint(3)
-    G = randint(252)
-    B = randint(244)
+    R = random.randint(0, 256)
+    G = random.randint(0, 256)
+    B = random.randint(0, 256)
 
     sticktext = message.input_or_reply_str
     if not sticktext:
@@ -32,10 +32,9 @@ async def sticklet(message: Message):
     sticktext = textwrap.wrap(sticktext, width=10)
     sticktext = '\n'.join(sticktext)
 
-    image = Image.new("RGBA", (512, 512), (3, 252, 244, 0))
+    image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
-    fontsize = 70
-   
+    fontsize = 230
 
     font_file = await get_font_file()
     font = ImageFont.truetype(font_file, size=fontsize)
