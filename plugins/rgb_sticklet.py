@@ -34,13 +34,13 @@ async def sticklet(message: Message):
 
     image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
-    fontsize = 230
+    fontsize = 130
 
     font_file = await get_font_file()
     font = ImageFont.truetype(font_file, size=fontsize)
 
     while draw.multiline_textsize(sticktext, font=font) > (512, 512):
-        fontsize -= 1
+        fontsize -= 5
         font = ImageFont.truetype(font_file, size=fontsize)
 
     width, height = draw.multiline_textsize(sticktext, font=font)
