@@ -12,13 +12,13 @@ from userge import userge, Message
     'usage': "{tr}plet [text | reply]",
     'examples': "{tr}plet @theUserge"}, allow_via_bot=False)
 async def sticklet(message: Message):
-    R = random.randint(0, 256)
-    G = random.randint(0, 256)
-    B = random.randint(0, 256)
+    R = 38
+    G = 247
+    B = 233
 
     sticktext = message.input_or_reply_str
     if not sticktext:
-        await message.edit("**Bruh** ~`I need some text to make sticklet`")
+        await message.edit("dei maanga texta sethi anupu")
         return
     await message.delete()
 
@@ -34,13 +34,13 @@ async def sticklet(message: Message):
 
     image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
-    fontsize = 130
+    fontsize = 230
 
     font_file = await get_font_file()
     font = ImageFont.truetype(font_file, size=fontsize)
 
     while draw.multiline_textsize(sticktext, font=font) > (512, 512):
-        fontsize -= 5
+        fontsize -= 3
         font = ImageFont.truetype(font_file, size=fontsize)
 
     width, height = draw.multiline_textsize(sticktext, font=font)
