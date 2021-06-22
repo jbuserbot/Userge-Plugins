@@ -18,7 +18,7 @@ async def sticklet(message: Message):
 
     sticktext = message.input_or_reply_str
     if not sticktext:
-        await message.edit("**Bruh** ~`I need some text to make sticklet`")
+        await message.edit("**For me** ~`texta sethi anupuda`")
         return
     await message.delete()
 
