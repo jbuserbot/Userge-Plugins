@@ -34,7 +34,7 @@ async def sticklet(message: Message):
 
     image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
-    fontsize = 30
+    fontsize = 230
 
     font_file = await get_font_file()
     font = ImageFont.truetype(font_file, size=fontsize)
