@@ -27,5 +27,5 @@ async def figlet_(message: Message):
         await message.edit(f"```{custom_fig.renderText(text.strip())}```")
         return
     str_ = ' '.join(args)
-    custom_fig = Figlet(font='big')
+    custom_fig = Figlet(font='threepoint')
     await message.edit(f"```{custom_fig.renderText(str_)}```")
